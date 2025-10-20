@@ -10,8 +10,44 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="relative">
+            <button id="languageBtn" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 border border-gray-600">
+                <span id="currentLang">🇧🇷</span>
+                <span id="currentLangText">PT</span>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div id="languageDropdown" class="absolute top-full right-0 mt-2 bg-gray-800 border border-gray-600 rounded-lg shadow-lg hidden min-w-[120px]">
+                <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-700 transition-colors duration-200 flex items-center gap-2" data-lang="pt">
+                    <span>🇧🇷</span>
+                    <span>Português</span>
+                </button>
+                <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-700 transition-colors duration-200 flex items-center gap-2" data-lang="en">
+                    <span>🇺🇸</span>
+                    <span>English</span>
+                </button>
+                <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-700 transition-colors duration-200 flex items-center gap-2" data-lang="es">
+                    <span>🇪🇸</span>
+                    <span>Español</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
     <custom-navbar></custom-navbar>
     
     <!-- Hero Section -->
@@ -26,16 +62,16 @@
                 Theo Viebrantz
             </h1>
             <h2 class="text-2xl md:text-3xl text-gray-300 mb-2">TheoMob</h2>
-            <p class="text-xl md:text-2xl text-purple-300 mb-8">Game Developer</p>
-            <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+            <p class="text-xl md:text-2xl text-purple-300 mb-8" data-translate="title">Game Developer</p>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8" data-translate="description">
                 Meu nome é Theo Viebrantz, também conhecido como TheoMob. Sou um entusiasta do desenvolvimento de jogos com experiência abrangente em diversas áreas da criação de jogos, incluindo game design, programação e arte. Com uma paixão contínua por aprender e aprimorar minhas habilidades, estou sempre buscando evoluir minhas competências!
             </p>
             <div class="flex gap-4 justify-center">
-                <a href="https://github.com/TheoMob" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                <a href="https://github.com/TheoMob" target="_blank" rel="noopener noreferrer" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
                     <i data-feather="github"></i>
                     GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/theo-cassuriaga-b39587236" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                <a href="https://www.linkedin.com/in/theo-cassuriaga-b39587236" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
                     <i data-feather="linkedin"></i>
                     LinkedIn
                 </a>
@@ -46,10 +82,10 @@
     <!-- Featured Projects -->
     <section id="projects" class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" data-translate="projects_title">
                 Projetos em Destaque
             </h2>
-            <p class="text-xl text-center text-gray-300 mb-16">
+            <p class="text-xl text-center text-gray-300 mb-16" data-translate="projects_subtitle">
                 Jogos que desenvolvi e prêmios conquistados
             </p>
             
@@ -60,14 +96,14 @@
                         <img src="IMG/chicken.jpg" alt="Chicken Holmes 2" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Chicken Holmes 2</h3>
-                    <p class="text-gray-300 mb-4">Jogo desenvolvido na Dreamlike Studio onde atuei como Programador Geral. Disponível na Steam.</p>
+                    <p class="text-gray-300 mb-4" data-translate="chicken_description">Jogo desenvolvido na Dreamlike Studio onde atuei como Programador Geral. Disponível na Steam.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
                         <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">C#</span>
                         <span class="bg-green-600 px-3 py-1 rounded-full text-sm">Steam</span>
                         <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2021</span>
                     </div>
-                    <a href="https://store.steampowered.com/app/1620860/Chicken_Holmes__Chanislavski_Whispers" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                    <a href="https://store.steampowered.com/app/1620860/Chicken_Holmes__Chanislavski_Whispers" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
                         <i data-feather="external-link"></i>
                         Steam
                     </a>
@@ -82,7 +118,7 @@
                         <img src="IMG/vampire-ninja.png" alt="Vampire Ninja" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Vampire Ninja</h3>
-                    <p class="text-gray-300 mb-4">🏆 Melhor Jogo - Farmando XP 2024. Vencedor da Gamejam Farmando XP 2024 (tema: Agilidade) nas categorias Melhor Gameplay e Melhor Jogo.</p>
+                    <p class="text-gray-300 mb-4" data-translate="vampire_description">🏆 Melhor Jogo - Farmando XP 2024. Vencedor da Gamejam Farmando XP 2024 (tema: Agilidade) nas categorias Melhor Gameplay e Melhor Jogo.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
                         <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">C#</span>
@@ -90,11 +126,11 @@
                         <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2024</span>
                     </div>
                     <div class="flex gap-2">
-                        <a href="https://theomob.itch.io/vampire-ninja" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                        <a href="https://theomob.itch.io/vampire-ninja" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
                             <i data-feather="external-link"></i>
                             Itch.io
                         </a>
-                        <a href="https://github.com/TheoMob" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                        <a href="https://github.com/TheoMob" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
                             <i data-feather="github"></i>
                             GitHub
                         </a>
@@ -107,14 +143,14 @@
                         <img src="IMG/headoff.png" alt="Head Off" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Head Off</h3>
-                    <p class="text-gray-300 mb-4">Jogo desenvolvido para a 16ª Game Jam da Pirate Software com o tema 'Você é sua arma'.</p>
+                    <p class="text-gray-300 mb-4" data-translate="headoff_description">Jogo desenvolvido para a 16ª Game Jam da Pirate Software com o tema 'Você é sua arma'.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
                         <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">C#</span>
                         <span class="bg-yellow-600 px-3 py-1 rounded-full text-sm">Game Jam</span>
                         <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2025</span>
                     </div>
-                    <a href="https://theomob.itch.io/head-off" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                    <a href="https://theomob.itch.io/head-off" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
                             <i data-feather="external-link"></i>
                             Itch.io
                         </a>
@@ -126,14 +162,14 @@
     <!-- Experience & Education -->
     <section id="experience" class="py-20 px-4 bg-gray-800">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" data-translate="experience_title">
                 Experiência & Formação
             </h2>
 
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Experience -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-8 text-purple-300">Experiência Profissional</h3>
+                    <h3 class="text-2xl font-bold mb-8 text-purple-300" data-translate="professional_experience">Experiência Profissional</h3>
                     
                     <!-- Wingeon -->
                     <div class="mb-8">
@@ -143,26 +179,26 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold">Wingeon Game Studios</h4>
-                                <p class="text-gray-300">Game Developer & Game Designer</p>
+                                <p class="text-gray-300" data-translate="wingeon_role">Game Developer & Game Designer</p>
                                 <p class="text-sm text-gray-400">2022 - 2024</p>
                             </div>
                         </div>
                         <ul class="text-gray-300 space-y-2 ml-16">
                             <li class="flex items-start gap-2">
                                 <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
-                                <span>Desenvolvimento de sistemas complexos de gameplay</span>
+                                <span data-translate="wingeon_task1">Desenvolvimento de sistemas complexos de gameplay</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
-                                <span>Conceptualização, desenvolvimento e programação de modos de jogo</span>
+                                <span data-translate="wingeon_task2">Conceptualização, desenvolvimento e programação de modos de jogo</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
-                                <span>Conceptualização, desenvolvimento e programação de chefes e personagens</span>
+                                <span data-translate="wingeon_task3">Conceptualização, desenvolvimento e programação de chefes e personagens</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
-                                <span>Game Designer no projeto Grand Line Adventures</span>
+                                <span data-translate="wingeon_task4">Game Designer no projeto Grand Line Adventures</span>
                             </li>
                         </ul>
                     </div>
@@ -175,18 +211,18 @@
                     </div>
                     <div>
                         <h4 class="text-xl font-bold">Dreamlike Studio</h4>
-                                <p class="text-gray-300">Programador Geral</p>
+                                <p class="text-gray-300" data-translate="dreamlike_role">Programador Geral</p>
                                 <p class="text-sm text-gray-400">2021</p>
                             </div>
                         </div>
                         <ul class="text-gray-300 space-y-2 ml-16">
                             <li class="flex items-start gap-2">
                                 <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
-                                <span>Desenvolvimento completo do jogo Chicken Holmes 2</span>
+                                <span data-translate="dreamlike_task1">Desenvolvimento completo do jogo Chicken Holmes 2</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
-                                <span>Publicação do jogo na plataforma Steam</span>
+                                <span data-translate="dreamlike_task2">Publicação do jogo na plataforma Steam</span>
                             </li>
                         </ul>
                     </div>
@@ -194,7 +230,7 @@
 
                 <!-- Education -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-8 text-purple-300">Formação Acadêmica</h3>
+                    <h3 class="text-2xl font-bold mb-8 text-purple-300" data-translate="academic_formation">Formação Acadêmica</h3>
                     
                     <!-- UFPEL -->
                     <div class="mb-8">
@@ -204,8 +240,8 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold">Universidade Federal de Pelotas - UFPEL</h4>
-                                <p class="text-gray-300">Bacharel em Ciência da Computação</p>
-                                <p class="text-sm text-gray-400">2020 - Cursando</p>
+                                <p class="text-gray-300" data-translate="ufpel_degree">Bacharel em Ciência da Computação</p>
+                                <p class="text-sm text-gray-400" data-translate="ufpel_period">2020 - Cursando</p>
                             </div>
                         </div>
                     </div>
@@ -218,9 +254,9 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold">Instituto Federal Sul Rio Grandense - IFSul</h4>
-                                <p class="text-gray-300">Curso Técnico em Eletrônica</p>
-                                <p class="text-sm text-gray-400">2015 - Finalizado</p>
-                                <p class="text-sm text-gray-400">Curso integrado com o ensino médio</p>
+                                <p class="text-gray-300" data-translate="ifsul_degree">Curso Técnico em Eletrônica</p>
+                                <p class="text-sm text-gray-400" data-translate="ifsul_period">2015 - Finalizado</p>
+                                <p class="text-sm text-gray-400" data-translate="ifsul_note">Curso integrado com o ensino médio</p>
                             </div>
                         </div>
                     </div>
@@ -232,7 +268,7 @@
     <!-- Awards -->
     <section id="awards" class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" data-translate="awards_title">
                 Conquistas & Prêmios
             </h2>
 
@@ -244,11 +280,11 @@
                             <i data-feather="award" class="text-gray-900"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Gamejam Farmando XP 2024</h3>
-                            <p class="text-xl text-purple-300">Melhor Gameplay</p>
+                            <h3 class="text-2xl font-bold" data-translate="gamejam_title">Gamejam Farmando XP 2024</h3>
+                            <p class="text-xl text-purple-300" data-translate="best_gameplay">Melhor Gameplay</p>
                         </div>
                     </div>
-                    <p class="text-gray-300">Vencedor na categoria melhor gameplay com o jogo Vampire Ninja</p>
+                    <p class="text-gray-300" data-translate="gameplay_description">Vencedor na categoria melhor gameplay com o jogo Vampire Ninja</p>
                 </div>
 
                 <!-- Best Game -->
@@ -258,11 +294,11 @@
                             <i data-feather="star" class="text-gray-900"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Gamejam Farmando XP 2024</h3>
-                            <p class="text-xl text-purple-300">Melhor Jogo</p>
+                            <h3 class="text-2xl font-bold" data-translate="gamejam_title">Gamejam Farmando XP 2024</h3>
+                            <p class="text-xl text-purple-300" data-translate="best_game">Melhor Jogo</p>
                         </div>
                     </div>
-                    <p class="text-gray-300">Vencedor na categoria melhor jogo com o jogo Vampire Ninja</p>
+                    <p class="text-gray-300" data-translate="best_game_description">Vencedor na categoria melhor jogo com o jogo Vampire Ninja</p>
                 </div>
             </div>
         </div>
@@ -274,17 +310,17 @@
             <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Theo Viebrantz (TheoMob)
             </h2>
-            <p class="text-2xl text-purple-300 mb-8">Desenvolvedor de Jogos</p>
+            <p class="text-2xl text-purple-300 mb-8" data-translate="contact_title">Desenvolvedor de Jogos</p>
             
             <div class="bg-gray-700 rounded-2xl p-8 max-w-2xl mx-auto">
                 <div class="flex items-center justify-center gap-3 mb-6">
                     <i data-feather="message-circle"></i>
-                    <span class="text-xl">Discord: _theomob</span>
+                    <span class="text-xl" data-translate="discord_contact">Discord: _theomob</span>
                 </div>
-                <p class="text-gray-300 text-lg mb-6">
+                <p class="text-gray-300 text-lg mb-6" data-translate="contact_best_way">
                     — a melhor forma de me contatar!
                 </p>
-                <p class="text-gray-300 text-lg leading-relaxed">
+                <p class="text-gray-300 text-lg leading-relaxed" data-translate="contact_message">
                     Obrigado por aprender um pouco sobre mim! É sempre um prazer conversar sobre desenvolvimento de jogos e ajudar no crescimento dos demais nessa área. Vamos criar algo incrível juntos! 🎮
                 </p>
             </div>
@@ -420,6 +456,175 @@
         
         // Initialize Three.js when page loads
         window.addEventListener('load', initThreeJS);
+        
+        // Translation System
+        const translations = {
+            pt: {
+                title: "Desenvolvedor de Jogos",
+                description: "Meu nome é Theo Viebrantz, também conhecido como TheoMob. Sou um entusiasta do desenvolvimento de jogos com experiência abrangente em diversas áreas da criação de jogos, incluindo game design, programação e arte. Com uma paixão contínua por aprender e aprimorar minhas habilidades, estou sempre buscando evoluir minhas competências!",
+                projects_title: "Projetos em Destaque",
+                projects_subtitle: "Jogos que desenvolvi e prêmios conquistados",
+                chicken_description: "Jogo desenvolvido na Dreamlike Studio onde atuei como Programador Geral. Disponível na Steam.",
+                vampire_description: "🏆 Melhor Jogo - Farmando XP 2024. Vencedor da Gamejam Farmando XP 2024 (tema: Agilidade) nas categorias Melhor Gameplay e Melhor Jogo.",
+                headoff_description: "Jogo desenvolvido para a 16ª Game Jam da Pirate Software com o tema 'Você é sua arma'.",
+                experience_title: "Experiência & Formação",
+                professional_experience: "Experiência Profissional",
+                academic_formation: "Formação Acadêmica",
+                wingeon_role: "Game Developer & Game Designer",
+                wingeon_task1: "Desenvolvimento de sistemas complexos de gameplay",
+                wingeon_task2: "Conceptualização, desenvolvimento e programação de modos de jogo",
+                wingeon_task3: "Conceptualização, desenvolvimento e programação de chefes e personagens",
+                wingeon_task4: "Game Designer no projeto Grand Line Adventures",
+                dreamlike_role: "Programador Geral",
+                dreamlike_task1: "Desenvolvimento completo do jogo Chicken Holmes 2",
+                dreamlike_task2: "Publicação do jogo na plataforma Steam",
+                ufpel_degree: "Bacharel em Ciência da Computação",
+                ufpel_period: "2020 - Cursando",
+                ifsul_degree: "Curso Técnico em Eletrônica",
+                ifsul_period: "2015 - Finalizado",
+                ifsul_note: "Curso integrado com o ensino médio",
+                awards_title: "Conquistas & Prêmios",
+                gamejam_title: "Gamejam Farmando XP 2024",
+                best_gameplay: "Melhor Gameplay",
+                best_game: "Melhor Jogo",
+                gameplay_description: "Vencedor na categoria melhor gameplay com o jogo Vampire Ninja",
+                best_game_description: "Vencedor na categoria melhor jogo com o jogo Vampire Ninja",
+                contact_title: "Desenvolvedor de Jogos",
+                discord_contact: "Discord: _theomob",
+                contact_best_way: "— a melhor forma de me contatar!",
+                contact_message: "Obrigado por aprender um pouco sobre mim! É sempre um prazer conversar sobre desenvolvimento de jogos e ajudar no crescimento dos demais nessa área. Vamos criar algo incrível juntos! 🎮"
+            },
+            en: {
+                title: "Game Developer",
+                description: "My name is Theo Viebrantz, also known as TheoMob. I am a game development enthusiast with comprehensive experience in various areas of game creation, including game design, programming, and art. With a continuous passion for learning and improving my skills, I am always seeking to evolve my competencies!",
+                projects_title: "Featured Projects",
+                projects_subtitle: "Games I developed and awards won",
+                chicken_description: "Game developed at Dreamlike Studio where I worked as General Programmer. Available on Steam.",
+                vampire_description: "🏆 Best Game - Farmando XP 2024. Winner of Farmando XP 2024 Gamejam (theme: Agility) in the categories Best Gameplay and Best Game.",
+                headoff_description: "Game developed for the 16th Pirate Software Game Jam with the theme 'You are your weapon'.",
+                experience_title: "Experience & Education",
+                professional_experience: "Professional Experience",
+                academic_formation: "Academic Formation",
+                wingeon_role: "Game Developer & Game Designer",
+                wingeon_task1: "Development of complex gameplay systems",
+                wingeon_task2: "Conceptualization, development and programming of game modes",
+                wingeon_task3: "Conceptualization, development and programming of bosses and characters",
+                wingeon_task4: "Game Designer on the Grand Line Adventures project",
+                dreamlike_role: "General Programmer",
+                dreamlike_task1: "Complete development of the game Chicken Holmes 2",
+                dreamlike_task2: "Game publication on the Steam platform",
+                ufpel_degree: "Bachelor in Computer Science",
+                ufpel_period: "2020 - In Progress",
+                ifsul_degree: "Technical Course in Electronics",
+                ifsul_period: "2015 - Completed",
+                ifsul_note: "Course integrated with high school",
+                awards_title: "Achievements & Awards",
+                gamejam_title: "Farmando XP 2024 Gamejam",
+                best_gameplay: "Best Gameplay",
+                best_game: "Best Game",
+                gameplay_description: "Winner in the best gameplay category with the game Vampire Ninja",
+                best_game_description: "Winner in the best game category with the game Vampire Ninja",
+                contact_title: "Game Developer",
+                discord_contact: "Discord: _theomob",
+                contact_best_way: "— the best way to contact me!",
+                contact_message: "Thank you for learning a bit about me! It's always a pleasure to talk about game development and help others grow in this area. Let's create something amazing together! 🎮"
+            },
+            es: {
+                title: "Desarrollador de Juegos",
+                description: "Mi nombre es Theo Viebrantz, también conocido como TheoMob. Soy un entusiasta del desarrollo de juegos con experiencia integral en diversas áreas de la creación de juegos, incluyendo diseño de juegos, programación y arte. Con una pasión continua por aprender y mejorar mis habilidades, ¡siempre busco evolucionar mis competencias!",
+                projects_title: "Proyectos Destacados",
+                projects_subtitle: "Juegos que desarrollé y premios conquistados",
+                chicken_description: "Juego desarrollado en Dreamlike Studio donde actué como Programador General. Disponible en Steam.",
+                vampire_description: "🏆 Mejor Juego - Farmando XP 2024. Ganador de la Gamejam Farmando XP 2024 (tema: Agilidad) en las categorías Mejor Gameplay y Mejor Juego.",
+                headoff_description: "Juego desarrollado para la 16ª Game Jam de Pirate Software con el tema 'Tú eres tu arma'.",
+                experience_title: "Experiencia & Formación",
+                professional_experience: "Experiencia Profesional",
+                academic_formation: "Formación Académica",
+                wingeon_role: "Desarrollador de Juegos y Diseñador de Juegos",
+                wingeon_task1: "Desarrollo de sistemas complejos de gameplay",
+                wingeon_task2: "Conceptualización, desarrollo y programación de modos de juego",
+                wingeon_task3: "Conceptualización, desarrollo y programación de jefes y personajes",
+                wingeon_task4: "Diseñador de Juegos en el proyecto Grand Line Adventures",
+                dreamlike_role: "Programador General",
+                dreamlike_task1: "Desarrollo completo del juego Chicken Holmes 2",
+                dreamlike_task2: "Publicación del juego en la plataforma Steam",
+                ufpel_degree: "Licenciado en Ciencias de la Computación",
+                ufpel_period: "2020 - En Curso",
+                ifsul_degree: "Curso Técnico en Electrónica",
+                ifsul_period: "2015 - Finalizado",
+                ifsul_note: "Curso integrado con la educación secundaria",
+                awards_title: "Logros & Premios",
+                gamejam_title: "Gamejam Farmando XP 2024",
+                best_gameplay: "Mejor Gameplay",
+                best_game: "Mejor Juego",
+                gameplay_description: "Ganador en la categoría mejor gameplay con el juego Vampire Ninja",
+                best_game_description: "Ganador en la categoría mejor juego con el juego Vampire Ninja",
+                contact_title: "Desarrollador de Juegos",
+                discord_contact: "Discord: _theomob",
+                contact_best_way: "— ¡la mejor forma de contactarme!",
+                contact_message: "¡Gracias por aprender un poco sobre mí! Siempre es un placer conversar sobre desarrollo de juegos y ayudar en el crecimiento de otros en esta área. ¡Vamos a crear algo increíble juntos! 🎮"
+            }
+        };
+        
+        let currentLanguage = 'pt';
+        
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            const elements = document.querySelectorAll('[data-translate]');
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update language button
+            const langFlags = { pt: '🇧🇷', en: '🇺🇸', es: '🇪🇸' };
+            const langTexts = { pt: 'PT', en: 'EN', es: 'ES' };
+            
+            document.getElementById('currentLang').textContent = langFlags[lang];
+            document.getElementById('currentLangText').textContent = langTexts[lang];
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageBtn = document.getElementById('languageBtn');
+            const languageDropdown = document.getElementById('languageDropdown');
+            const languageOptions = document.querySelectorAll('.language-option');
+            
+            // Load saved language or default to Portuguese
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt';
+            updateLanguage(savedLanguage);
+            
+            // Toggle dropdown
+            languageBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                languageDropdown.classList.toggle('hidden');
+            });
+            
+            // Handle language selection
+            languageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    updateLanguage(selectedLang);
+                    languageDropdown.classList.add('hidden');
+                });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                languageDropdown.classList.add('hidden');
+            });
+            
+            // Prevent dropdown from closing when clicking inside
+            languageDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
     </script>
 </body>
 </html>

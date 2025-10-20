@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo Viebrantz - Game Developer</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-gray-900 to-black"></div>
+        <canvas id="three-canvas" class="absolute inset-0"></canvas>
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
+                <img src="IMG/profiletheo.jpeg" alt="Theo Viebrantz" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Theo Viebrantz
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-gray-300 mb-2">TheoMob</h2>
+            <p class="text-xl md:text-2xl text-purple-300 mb-8">Game Developer</p>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+                Meu nome é Theo Viebrantz, também conhecido como TheoMob. Sou um entusiasta do desenvolvimento de jogos com experiência abrangente em diversas áreas da criação de jogos, incluindo game design, programação e arte. Com uma paixão contínua por aprender e aprimorar minhas habilidades, estou sempre buscando evoluir minhas competências!
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="https://github.com/TheoMob" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                    <i data-feather="github"></i>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/theo-cassuriaga-b39587236" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                    <i data-feather="linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Projetos em Destaque
+            </h2>
+            <p class="text-xl text-center text-gray-300 mb-16">
+                Jogos que desenvolvi e prêmios conquistados
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Chicken Holmes 2 -->
+                <div class="bg-gray-800 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                    <div class="w-full h-48 rounded-xl mb-4 overflow-hidden">
+                        <img src="IMG/chicken.jpg" alt="Chicken Holmes 2" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Chicken Holmes 2</h3>
+                    <p class="text-gray-300 mb-4">Jogo desenvolvido na Dreamlike Studio onde atuei como Programador Geral. Disponível na Steam.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
+                        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">C#</span>
+                        <span class="bg-green-600 px-3 py-1 rounded-full text-sm">Steam</span>
+                        <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2021</span>
+                    </div>
+                    <a href="https://store.steampowered.com/app/1620860/Chicken_Holmes__Chanislavski_Whispers" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                        <i data-feather="external-link"></i>
+                        Steam
+                    </a>
+                </div>
+
+                <!-- Vampire Ninja -->
+                <div class="bg-gray-800 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 border-2 border-yellow-400 relative">
+                    <div class="absolute -top-3 -right-3 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full font-bold">
+                    🏆
+                    </div>
+                    <div class="w-full h-48 rounded-xl mb-4 overflow-hidden">
+                        <img src="IMG/vampire-ninja.png" alt="Vampire Ninja" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Vampire Ninja</h3>
+                    <p class="text-gray-300 mb-4">🏆 Melhor Jogo - Farmando XP 2024. Vencedor da Gamejam Farmando XP 2024 (tema: Agilidade) nas categorias Melhor Gameplay e Melhor Jogo.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
+                        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">C#</span>
+                        <span class="bg-yellow-600 px-3 py-1 rounded-full text-sm">Game Jam</span>
+                        <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2024</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="https://theomob.itch.io/vampire-ninja" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                            <i data-feather="external-link"></i>
+                            Itch.io
+                        </a>
+                        <a href="https://github.com/TheoMob" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                            <i data-feather="github"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Head Off -->
+                <div class="bg-gray-800 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                    <div class="w-full h-48 rounded-xl mb-4 overflow-hidden">
+                        <img src="IMG/headoff.png" alt="Head Off" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Head Off</h3>
+                    <p class="text-gray-300 mb-4">Jogo desenvolvido para a 16ª Game Jam da Pirate Software com o tema 'Você é sua arma'.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
+                        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">C#</span>
+                        <span class="bg-yellow-600 px-3 py-1 rounded-full text-sm">Game Jam</span>
+                        <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2025</span>
+                    </div>
+                    <a href="https://theomob.itch.io/head-off" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                            <i data-feather="external-link"></i>
+                            Itch.io
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="py-20 px-4 bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Experiência & Formação
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-purple-300">Experiência Profissional</h3>
+                    
+                    <!-- Wingeon -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center overflow-hidden">
+                                <img src="IMG/grandline.png" alt="Grand Line Adventures" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">Wingeon Game Studios</h4>
+                                <p class="text-gray-300">Game Developer & Game Designer</p>
+                                <p class="text-sm text-gray-400">2022 - 2024</p>
+                            </div>
+                        </div>
+                        <ul class="text-gray-300 space-y-2 ml-16">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
+                                <span>Desenvolvimento de sistemas complexos de gameplay</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
+                                <span>Conceptualização, desenvolvimento e programação de modos de jogo</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
+                                <span>Conceptualização, desenvolvimento e programação de chefes e personagens</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
+                                <span>Game Designer no projeto Grand Line Adventures</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Dreamlike Studio -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden">
+                        <img src="IMG/dreanlike.png" alt="Dreamlike Studio" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold">Dreamlike Studio</h4>
+                                <p class="text-gray-300">Programador Geral</p>
+                                <p class="text-sm text-gray-400">2021</p>
+                            </div>
+                        </div>
+                        <ul class="text-gray-300 space-y-2 ml-16">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
+                                <span>Desenvolvimento completo do jogo Chicken Holmes 2</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 mt-1 text-green-400"></i>
+                                <span>Publicação do jogo na plataforma Steam</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-purple-300">Formação Acadêmica</h3>
+                    
+                    <!-- UFPEL -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                                <i data-feather="book"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">Universidade Federal de Pelotas - UFPEL</h4>
+                                <p class="text-gray-300">Bacharel em Ciência da Computação</p>
+                                <p class="text-sm text-gray-400">2020 - Cursando</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IFSul -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                                <i data-feather="award"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">Instituto Federal Sul Rio Grandense - IFSul</h4>
+                                <p class="text-gray-300">Curso Técnico em Eletrônica</p>
+                                <p class="text-sm text-gray-400">2015 - Finalizado</p>
+                                <p class="text-sm text-gray-400">Curso integrado com o ensino médio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Conquistas & Prêmios
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Best Gameplay -->
+                <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl p-8 border border-purple-500/30">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <i data-feather="award" class="text-gray-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Gamejam Farmando XP 2024</h3>
+                            <p class="text-xl text-purple-300">Melhor Gameplay</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">Vencedor na categoria melhor gameplay com o jogo Vampire Ninja</p>
+                </div>
+
+                <!-- Best Game -->
+                <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl p-8 border border-purple-500/30">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <i data-feather="star" class="text-gray-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Gamejam Farmando XP 2024</h3>
+                            <p class="text-xl text-purple-300">Melhor Jogo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">Vencedor na categoria melhor jogo com o jogo Vampire Ninja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Theo Viebrantz (TheoMob)
+            </h2>
+            <p class="text-2xl text-purple-300 mb-8">Desenvolvedor de Jogos</p>
+            
+            <div class="bg-gray-700 rounded-2xl p-8 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <i data-feather="message-circle"></i>
+                    <span class="text-xl">Discord: _theomob</span>
+                </div>
+                <p class="text-gray-300 text-lg mb-6">
+                    — a melhor forma de me contatar!
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Obrigado por aprender um pouco sobre mim! É sempre um prazer conversar sobre desenvolvimento de jogos e ajudar no crescimento dos demais nessa área. Vamos criar algo incrível juntos! 🎮
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Three.js Scene Setup
+        let scene, camera, renderer, particles;
+        let mouseX = 0, mouseY = 0;
+        let targetRotationX = 0, targetRotationY = 0;
+        let currentRotationX = 0, currentRotationY = 0;
+        
+        function initThreeJS() {
+            const canvas = document.getElementById('three-canvas');
+            const heroSection = document.getElementById('hero');
+            
+            // Scene
+            scene = new THREE.Scene();
+            
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+            
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true,
+                antialias: true 
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            
+            // Create floating particles
+            createParticles();
+            
+            // Mouse movement tracking
+            document.addEventListener('mousemove', onMouseMove);
+            
+            // Animation loop
+            animate();
+            
+            // Handle window resize
+            window.addEventListener('resize', onWindowResize);
+        }
+        
+        function onMouseMove(event) {
+            // Normalize mouse coordinates to -1 to 1 range
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            // Set target rotation based on mouse position
+            targetRotationY = mouseX * 0.5; // Horizontal rotation
+            targetRotationX = mouseY * 0.3; // Vertical rotation (reduced for subtlety)
+        }
+        
+        function createParticles() {
+            const particleCount = 100;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                
+                // Random positions
+                positions[i3] = (Math.random() - 0.5) * 20;
+                positions[i3 + 1] = (Math.random() - 0.5) * 20;
+                positions[i3 + 2] = (Math.random() - 0.5) * 20;
+                
+                // Purple to pink gradient colors
+                const color = new THREE.Color();
+                color.setHSL(0.7 + Math.random() * 0.2, 0.8, 0.6);
+                colors[i3] = color.r;
+                colors[i3 + 1] = color.g;
+                colors[i3 + 2] = color.b;
+            }
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            
+            const material = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending
+            });
+            
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+        }
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            if (particles) {
+                // Smooth interpolation towards target rotation
+                currentRotationX += (targetRotationX - currentRotationX) * 0.05;
+                currentRotationY += (targetRotationY - currentRotationY) * 0.05;
+                
+                // Apply mouse-controlled rotation
+                particles.rotation.x = currentRotationX;
+                particles.rotation.y = currentRotationY;
+                
+                // Add subtle continuous rotation
+                particles.rotation.z += 0.001;
+                
+                // Animate individual particles
+                const positions = particles.geometry.attributes.position.array;
+                for (let i = 0; i < positions.length; i += 3) {
+                    positions[i + 1] += Math.sin(Date.now() * 0.001 + i) * 0.001;
+                }
+                particles.geometry.attributes.position.needsUpdate = true;
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        
+        // Initialize Three.js when page loads
+        window.addEventListener('load', initThreeJS);
+    </script>
+</body>
+</html>
